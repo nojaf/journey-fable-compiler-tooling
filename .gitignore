@@ -1,2 +1,7 @@
 .idea/
 node_modules/
+bin/
+**/.paket/load/
+paket-files/
+pika/public/lib
+pika/public/Fable*
