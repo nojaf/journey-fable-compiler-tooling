@@ -1,0 +1,8 @@
+source https://www.nuget.org/api/v2
+storage:none
+framework: netstandard2.0
+
+nuget Fable.React
+nuget Fable.Node
+github fable-compiler/fableconf:masant src/Types.fs
+github fable-compiler/fableconf:masant src/Speakers.fs
