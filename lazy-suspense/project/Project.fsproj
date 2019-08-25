@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src/HookRouter.fs" />
+    <Compile Include="src/Pages/About.fs" />
+    <Compile Include="src/Pages/Home.fs" />
+    <Compile Include="src/Pages/ProductList.fs" />
+    <Compile Include="src/Pages/ProductDetail.fs" />
+    <Compile Include="src/App.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fable.Promise" Version="2.0.0" />
+    <PackageReference Include="Fable.React" Version="5.2.6" />
+  </ItemGroup>
+</Project>
