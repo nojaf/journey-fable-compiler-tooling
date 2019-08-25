@@ -5,3 +5,5 @@ bin/
 paket-files/
 pika/public/lib
 pika/public/Fable*
+obj/
+docs/
