@@ -1,9 +1,15 @@
 const path = require("path");
+const fs = require("fs");
 const start = require("fable-compiler").default;
 const { transformFromAstSync } = require("@babel/core");
 
-const fableCliArgs = {};
+const outputFile = path.join(__dirname, "App.js");
 
+if(fs.existsSync(outputFile)) {
+    fs.unlinkSync(outputFile)
+}
+
+const fableCliArgs = {};
 const fableCompiler = start(fableCliArgs);
 
 fableCompiler.send({
@@ -15,4 +21,6 @@ fableCompiler.send({
 
     const { code } = transformFromAstSync(result);
     console.log(`Babel result: \n${code}\n`);
+
+    fs.writeFileSync(outputFile, code);
 });
