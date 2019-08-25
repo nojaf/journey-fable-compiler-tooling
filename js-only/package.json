@@ -1,0 +1,12 @@
+{
+  "name": "js-only",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "fable-compiler-js": "^1.0.5"
+  },
+  "scripts": {
+    "start": "fable App.fsx --commonjs --watch --run"
+  }
+}
