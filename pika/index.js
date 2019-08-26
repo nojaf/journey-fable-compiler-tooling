@@ -25,7 +25,7 @@ function compileFSharp(){
 
 compileFSharp();
 
-fs.watchFile(scriptPath, { interval: 500 }, (prev, current) => {
+fs.watchFile(scriptPath, { interval: 500 }, () => {
     console.log(`File change detected`);
     compileFSharp();
 });
