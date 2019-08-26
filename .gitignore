@@ -10,3 +10,4 @@ pika/public/**/*.js
 pika/public/web_modules/
 obj/
 docs/
+slides/*.pptx
