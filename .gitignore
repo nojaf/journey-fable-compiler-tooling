@@ -7,5 +7,6 @@ pika/public/lib
 pika/public/Fable*
 pika/public/*.js
 pika/public/**/*.js
+pika/public/web_modules/
 obj/
 docs/

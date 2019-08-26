@@ -12,5 +12,9 @@
   "dependencies": {
     "react": "npm:@reactesm/react",
     "react-dom": "npm:@reactesm/react-dom"
+  },
+  "scripts": {
+    "postinstall": "pika-web --dest public/web_modules",
+    "start": "node index.js"
   }
 }
