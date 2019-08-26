@@ -37,10 +37,19 @@ function isModuleRequest(url) {
     return !(fileRegex.test(lastPiece));
 }
 
+const oneDayInSeconds = 60 * 60 * 24;
+const cacheHeader = {'Cache-Control':`public,max-age=${oneDayInSeconds}`};
+const contentTypeHeader = {'Content-Type': 'application/javascript'};
+
 function es6Middleware(req,res,next){
     if (isModuleRequest(req.url) && req.url !== "/") {
         const content = fs.readFileSync(path.join(__dirname, "public", `${req.url}.js`), 'utf8');
-        res.writeHead(200, {'Content-Type': 'application/javascript'});
+        const headers =
+            (/^\/(fable|Fable|lib).*\/.*/.test(req.url)) ?
+                Object.assign(res.headers || {}, cacheHeader, contentTypeHeader) :
+                Object.assign(res.headers || {}, contentTypeHeader) ;
+
+        res.writeHead(200, headers);
         res.write(content);
         res.end();
     } else {
@@ -48,9 +57,21 @@ function es6Middleware(req,res,next){
     }
 }
 
+function cacheWebModules(req, res, next){
+    if (/^\/web_modules\/*./.test(req.url) && req.url !== "/") {
+        res.writeHead(200, Object.assign(res.headers || {}, cacheHeader, contentTypeHeader));
+        const content = fs.readFileSync(path.join(__dirname, "public", `${req.url}`));
+        res.write(content);
+        res.end();
+    }
+    else {
+        next();
+    }
+}
+
 browserSync.init({
     server: path.join(__dirname, "public"),
     watch: true,
-    middleware: [ es6Middleware ],
+    middleware: [ es6Middleware, cacheWebModules ],
     open: false
 });
