@@ -5,5 +5,7 @@ bin/
 paket-files/
 pika/public/lib
 pika/public/Fable*
+pika/public/*.js
+pika/public/**/*.js
 obj/
 docs/
