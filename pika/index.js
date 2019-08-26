@@ -33,7 +33,7 @@ fs.watchFile(scriptPath, { interval: 500 }, (prev, current) => {
 function isModuleRequest(url) {
     const pieces = url.split("/");
     const lastPiece = pieces && pieces[pieces.length - 1];
-    const fileRegex = /\.(js|html|css|png|svg)$/;
+    const fileRegex = /\.(js|html|css|png|svg|ico)$/;
     return !(fileRegex.test(lastPiece));
 }
 
