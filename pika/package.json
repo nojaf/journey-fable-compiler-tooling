@@ -14,7 +14,7 @@
     "react-dom": "npm:@reactesm/react-dom"
   },
   "scripts": {
-    "postinstall": "pika-web --dest public/web_modules",
+    "postinstall": "paket restore && paket generate-load-scripts -t fsx && pika-web --dest public/web_modules",
     "start": "node index.js"
   }
 }

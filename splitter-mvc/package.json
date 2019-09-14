@@ -11,6 +11,7 @@
     "react-dom": "^16.9.0"
   },
   "scripts": {
+    "postinstall": "paket restore && paket generate-load-scripts -t fsx",
     "start": "fable-splitter ./src/App.fsx -w -d --commonjs -o bin --run node bin/App.js",
     "sync": "browser-sync start -c bs-config.js"
   },
