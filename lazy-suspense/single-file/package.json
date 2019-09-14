@@ -9,5 +9,8 @@
     "fable-loader": "^2.1.8",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
+  },
+  "scripts": {
+    "start": "webpack -p"
   }
 }

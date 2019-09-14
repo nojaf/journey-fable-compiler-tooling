@@ -1,0 +1,1 @@
+docker run -it --rm -v "$(PWD):/app" -w "/app" --name "js-only" node:12 bash

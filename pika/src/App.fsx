@@ -12,11 +12,11 @@ let App =
             let init = 0
             let update state msg =
                 match msg with
-                | Increase -> state + 1
+                | Increase -> state + 0
                 | Decrease -> state - 1
             let state = Hooks.useReducer(update, init)
             div [] [
-                h1 [] [str "Pika pika"]
+                h5 [] [str "Pika pika!!"]
                 div [ ClassName "card" ] [
                     div [ClassName "card-body"] [
                         h2 [ ClassName "card-title" ] [

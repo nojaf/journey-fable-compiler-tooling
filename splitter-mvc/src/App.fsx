@@ -45,7 +45,7 @@ let layout page =
           body [ ]
             [ nav [ Class "navbar navbar-expand-lg navbar-dark bg-primary" ]
                 [ a [ Class "navbar-brand"
-                      Href "#" ]
+                      Href "/" ]
                     [ span [ Class "mx-2" ]
                         [ str "Fable MVC" ]  ] ]
               div [ Class "container mt-4" ]
@@ -84,7 +84,7 @@ let indexPage =
 
 
     div [] [
-        h1 [] [str "FableConf Speakers"]
+        h5 [] [str "FableConf Speakers"]
         ul [ClassName "list-unstyled mt-4"] speakers
     ]
     |> layout
